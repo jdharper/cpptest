@@ -1,2 +1,5 @@
 project (cpptest CXX)
-add_library(cpptest SHARED cpptest.cpp cpptest.h)
+add_subdirectory(example)
+
+add_library(cpptest cpptest.cpp cpptest.h)
+
