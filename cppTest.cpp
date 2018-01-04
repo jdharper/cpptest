@@ -1,4 +1,6 @@
+#include <typeinfo>
 #include "cppTest.h"
+
 
 void TestResult::addPass(TestRunner * test)
 {
@@ -64,9 +66,10 @@ void TestGroup::addTest(TestRunner * runner)
 
 void TestGroup::run(TestResult & result)
 {
-	for (auto & test : tests)
+	tests_t::iterator it;
+	for (it = tests.begin(); it != tests.end(); ++it)
 	{
-		printf("test %s\n", test->name().c_str());
+		TestRunner * test = *it;
 		test->run(result);
 	}
 }
@@ -78,7 +81,7 @@ TestGroup::TestGroup(const char * name) :
 }
 
 TestRegistry :: TestRegistry() :
-	TestGroup(nullptr, "")
+	TestGroup(0, "")
 {
 }
 

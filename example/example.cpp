@@ -1,4 +1,4 @@
-#include "CppTest.h"
+#include "cppTest.h"
 
 // This function has a bug.  It is supposed to return
 // the product of a and b but it actually returns the
