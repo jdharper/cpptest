@@ -41,6 +41,7 @@ public:
 	TestRunner(TestRunner * parent, const char * _name);
 	std::string name() const;
 	virtual void run(TestResult &)= 0;
+	virtual ~TestRunner() { }
 
 	TestRunner * parent;
 	std::string _name;
